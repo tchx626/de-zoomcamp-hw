@@ -68,3 +68,56 @@ volumes:
 *Since pgAdmin and PostgreSQL are in the same Docker network, pgAdmin can  directly use the internal port 5432 of the PostgreSQL container.*
 
 If there are more than one answers, select only one of them
+
+
+
+##  Prepare Postgres
+
+Run Postgres and load data as shown in the videos
+We'll use the green taxi trips from October 2019:
+
+```bash
+wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz
+```
+
+You will also need the dataset with zones:
+
+```bash
+wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv
+```
+
+Download this data and put it into Postgres.
+
+You can use the code from the course. It's up to you whether
+you want to use Jupyter or a python script.
+
+
+
+### Solution
+
+> All bash commands run in **PowerShell**.
+
+**Data exploration**
+
+Related files: `exploration.ipynb`
+
+```bash
+Invoke-WebRequest -Uri "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz" -OutFile "green_tripdata_2019-10.csv.gz"
+
+Invoke-WebRequest -Uri "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv" -OutFile "taxi_zone_lookup.csv"
+```
+
+**Run database and database administrator**
+
+Related files: `docker-compose.yaml`
+
+```bash
+docker-compose up
+```
+
+
+
+**Load data into database**
+
+Related files: `Dockerfile` `ingest_data.py`
+
