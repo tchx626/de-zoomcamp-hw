@@ -1,5 +1,7 @@
 # Module 1 Homework: Docker & SQL
 
+> Solutions are included in this documentary.
+
 ## Question 1. Understanding docker first run
 
 Run docker with the `python:3.12.8` image in an interactive mode, use the entrypoint `bash`.
