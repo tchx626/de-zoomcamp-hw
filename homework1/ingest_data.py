@@ -79,7 +79,7 @@ if __name__ == '__main__':
     parser.add_argument('--db', required=True, help='database name for postgres')
     parser.add_argument('--table_name', required=True, help='name of the table where we will write the results to')
     parser.add_argument('--url', required=True, help='url of the csv file')
-    parser.add_argument('--convert-date',  action='store_true', help='whether covert text to date')
+    parser.add_argument('--convert_dates',  action='store_true', help='whether covert text to date')
 
     args = parser.parse_args()
 
